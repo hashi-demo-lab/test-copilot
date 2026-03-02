@@ -212,7 +212,7 @@ provider "aws" {
 
 ## 5. Implementation Checklist
 
-- [ ] **Scaffold**: Create file structure with versions.tf (terraform + cloud block + required_providers aws ~> 5.0), backend.tf (cloud block for workspace sandbox-consumer-asg-alb), providers.tf (provider aws with default_tags), variables.tf (all 12 variables from Section 3), outputs.tf (all 10 outputs), locals.tf (naming suffix, subnet transformations), data.tf (VPC and subnet data sources), README.md (deployment instructions), terraform.auto.tfvars.example (example variable values)
+- [x] **Scaffold**: Create file structure with versions.tf (terraform + cloud block + required_providers aws ~> 5.0), backend.tf (cloud block for workspace sandbox-consumer-asg-alb), providers.tf (provider aws with default_tags), variables.tf (all 12 variables from Section 3), outputs.tf (all 10 outputs), locals.tf (naming suffix, subnet transformations), data.tf (VPC and subnet data sources), README.md (deployment instructions), terraform.auto.tfvars.example (example variable values)
 
 - [ ] **Core Infrastructure**: Implement main.tf with random_string resource for naming_suffix, ALB module call with target_groups["web"] configuration (health_check path="/", interval=30, matcher="200"), ASG module call with target_group_arns wired from ALB, launch template configuration (instance_type, ami_id, block_device_mappings with encryption, metadata_options with IMDSv2), IAM configuration (create_iam_instance_profile=true, iam_role_policies for SSM and CloudWatch), health_check_type="ELB", instance_refresh with Rolling strategy
 
