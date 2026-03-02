@@ -32,8 +32,8 @@ variable "min_size" {
   default     = 1
 
   validation {
-    condition     = var.min_size >= 1 && var.min_size <= var.max_size
-    error_message = "min_size must be at least 1 and not greater than max_size."
+    condition     = var.min_size >= 1
+    error_message = "min_size must be at least 1."
   }
 }
 
@@ -43,8 +43,8 @@ variable "max_size" {
   default     = 3
 
   validation {
-    condition     = var.max_size >= var.min_size && var.max_size <= 10
-    error_message = "max_size must be greater than or equal to min_size and not exceed 10."
+    condition     = var.max_size >= 1 && var.max_size <= 10
+    error_message = "max_size must be between 1 and 10."
   }
 }
 
@@ -54,8 +54,8 @@ variable "desired_capacity" {
   default     = 1
 
   validation {
-    condition     = var.desired_capacity >= var.min_size && var.desired_capacity <= var.max_size
-    error_message = "desired_capacity must be between min_size and max_size."
+    condition     = var.desired_capacity >= 1
+    error_message = "desired_capacity must be at least 1."
   }
 }
 
