@@ -66,7 +66,7 @@ Apply `tf-judge-criteria` skill (Consumer Workflow dimensions) to score the depl
 
 Calculate overall score. If Security & Compliance < 5.0, force "Not Production Ready".
 
-### Step 4 — Sandbox Deployment (if requested)
+### Step 4 — Sandbox Deployment
 
 If `$ARGUMENTS` includes sandbox deployment instructions:
 
@@ -76,8 +76,6 @@ If `$ARGUMENTS` includes sandbox deployment instructions:
 4. Capture: run URL, plan/apply status, resource counts, cost estimate
 5. Report deployment results
 6. Do NOT destroy sandbox resources — the orchestrator handles destroy prompting
-
-If sandbox deployment is not requested, skip this step and note "Sandbox deploy: SKIPPED" in the report.
 
 ## Output
 
